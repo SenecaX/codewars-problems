@@ -13,17 +13,17 @@
 
 
 function isIsogram(str){
-    const convertToArray = str.toLowerCase().split('');
-    
+    const convertToLowercase = str.toLowerCase()
+    const convertToArray = convertToLowercase.split('');
+
     // Loop in string first
-    for(let i = 0; i <= str.length; i++) {
-        // remove element first in string
-         convertToArray.splice(0, 1);
+    for(let i = 0; i <= convertToLowercase.length; i++) {
+        convertToArray.splice(0, 1);
 
         // find the element in the convertToArray variable
-        const similarElement = convertToArray.findIndex(element =>  element === str[i]);
+        console.log('convertToLowercase[i]', convertToLowercase[i])
+        const similarElement = convertToArray.findIndex(element =>  element === convertToLowercase[i]);
 
-        console.log('similarElement', similarElement)
         if(similarElement !== -1)  {
             return false
         }
@@ -31,6 +31,9 @@ function isIsogram(str){
     }
     return true;
   }
+
+  console.log(isIsogram("autylkqvbmjnsorZhwfdpzcie")); 
+
 
 
 // BETTER VERSION
@@ -43,7 +46,7 @@ function isIsogram(str){
 
 // In the case of the isIsogram function, the chars Set is used to keep track of the unique characters in the input string. Each time a character is processed, it is added to the chars Set using the add method. If the chars Set already contains the character, it means that the character has already appeared in the input string and the function returns false.
 
-function isIsogram(str) {
+function isIsograms(str) {
     // Convert the string to lowercase to ignore letter case
     str = str.toLowerCase();
   
@@ -67,6 +70,3 @@ function isIsogram(str) {
     // If the function has not returned yet, the string is an isogram
     return true;
   }
-
-
-  console.log(isIsogram("moOse")); 
