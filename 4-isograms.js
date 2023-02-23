@@ -21,7 +21,6 @@ function isIsogram(str){
         convertToArray.splice(0, 1);
 
         // find the element in the convertToArray variable
-        console.log('convertToLowercase[i]', convertToLowercase[i])
         const similarElement = convertToArray.findIndex(element =>  element === convertToLowercase[i]);
 
         if(similarElement !== -1)  {
